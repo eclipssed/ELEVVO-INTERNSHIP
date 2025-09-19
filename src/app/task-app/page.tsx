@@ -2,154 +2,176 @@
 
 import { motion } from "framer-motion";
 import {
-  FaCheckCircle,
+  FaTasks,
   FaUsers,
-  FaRocket,
+  FaChartLine,
   FaTwitter,
   FaFacebook,
   FaLinkedin,
 } from "react-icons/fa";
+import { Button } from "@/components/Button";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+const pricing = [
+  {
+    name: "Free",
+    price: "$0",
+    features: ["Basic tasks", "Single user"],
+  },
+  {
+    name: "Pro",
+    price: "$9/mo",
+    features: ["Unlimited tasks", "Collaboration", "Insights"],
+  },
+  {
+    name: "Team",
+    price: "$29/mo",
+    features: ["Team dashboard", "Advanced analytics", "Priority support"],
+  },
+];
 
-const TaskApp = () => {
+export default function Home() {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Hero */}
-      <header className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-8 text-center">
-        <h1 className="text-4xl font-bold">TaskFlow</h1>
-        <p className="mt-4 text-lg">Organize your tasks, boost your flow.</p>
-        <button className="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow hover:bg-gray-100">
-          Get Started
-        </button>
-      </header>
+    <main className="flex flex-col items-center justify-center">
+      {/* Hero Section */}
+      <section className="w-full min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-indigo-50 to-white px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2 }}
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-5xl font-bold text-indigo-600">TaskFlow</h1>
+          <p className="mt-4 text-lg text-gray-600">
+            Organize your tasks. Simplify your life.
+          </p>
+          <Button className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white">
+            Get Started
+          </Button>
+        </motion.div>
+      </section>
 
-      {/* Features */}
-      <motion.section
-        className="py-16 px-6 max-w-6xl mx-auto"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="text-3xl font-bold text-center mb-10">Features</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="text-center p-6 rounded-lg shadow hover:shadow-lg transition">
-            <FaCheckCircle className="text-blue-600 text-5xl mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Simple Organization</h3>
-            <p>
-              Easily manage and prioritize your tasks with a clean interface.
+      {/* Features Section */}
+      <section className="w-full py-20 bg-white px-6">
+        <motion.div
+          className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2 }}
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+        >
+          <div>
+            <FaTasks className="text-4xl mx-auto text-indigo-600" />
+            <h3 className="mt-4 text-xl font-semibold">Smart Tasking</h3>
+            <p className="text-gray-600 mt-2">
+              Create, manage, and prioritize tasks with ease.
             </p>
           </div>
-          <div className="text-center p-6 rounded-lg shadow hover:shadow-lg transition">
-            <FaRocket className="text-blue-600 text-5xl mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Boost Productivity</h3>
-            <p>
-              Stay on track and get more done with smart reminders and tracking.
+          <div>
+            <FaUsers className="text-4xl mx-auto text-indigo-600" />
+            <h3 className="mt-4 text-xl font-semibold">Team Collaboration</h3>
+            <p className="text-gray-600 mt-2">
+              Share tasks with teammates and boost productivity.
             </p>
           </div>
-          <div className="text-center p-6 rounded-lg shadow hover:shadow-lg transition">
-            <FaUsers className="text-blue-600 text-5xl mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Team Collaboration</h3>
-            <p>
-              Share tasks and projects with your team to work better together.
+          <div>
+            <FaChartLine className="text-4xl mx-auto text-indigo-600" />
+            <h3 className="mt-4 text-xl font-semibold">Progress Tracking</h3>
+            <p className="text-gray-600 mt-2">
+              Stay on top with progress charts and insights.
             </p>
           </div>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
 
-      {/* Reviews */}
-      <motion.section
-        className="bg-gray-50 py-16 px-6"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="text-3xl font-bold text-center mb-10">
-          What People Say
-        </h2>
-        <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
-          <blockquote className="bg-white p-6 rounded-lg shadow">
-            <p>
-              "TaskFlow completely changed how I handle my daily tasks. It’s a
-              lifesaver!"
+      {/* Reviews Section */}
+      <section className="w-full py-20 bg-gray-50 px-6">
+        <motion.div
+          className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2 }}
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+        >
+          <blockquote className="p-6 bg-white rounded-2xl shadow">
+            <p className="text-gray-700">
+              “TaskFlow made my workday 10x smoother. Absolute game-changer!”
             </p>
-            <footer className="mt-4 text-sm font-semibold">– Sarah J.</footer>
+            <span className="block mt-4 font-semibold">— Sarah M.</span>
           </blockquote>
-          <blockquote className="bg-white p-6 rounded-lg shadow">
-            <p>
-              "The team features make collaboration seamless. Highly recommend
-              it."
+          <blockquote className="p-6 bg-white rounded-2xl shadow">
+            <p className="text-gray-700">
+              “Collaboration has never been this seamless. My team loves it.”
             </p>
-            <footer className="mt-4 text-sm font-semibold">– Mark T.</footer>
+            <span className="block mt-4 font-semibold">— James R.</span>
           </blockquote>
-          <blockquote className="bg-white p-6 rounded-lg shadow">
-            <p>
-              "I’ve tried other apps, but TaskFlow is the one that stuck. Clean
-              and powerful."
+          <blockquote className="p-6 bg-white rounded-2xl shadow">
+            <p className="text-gray-700">
+              “Finally, a tool that actually helps me finish my to-do list.”
             </p>
-            <footer className="mt-4 text-sm font-semibold">– Emily R.</footer>
+            <span className="block mt-4 font-semibold">— Maria L.</span>
           </blockquote>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
 
-      {/* Pricing */}
-      <motion.section
-        className="py-16 px-6 max-w-6xl mx-auto"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <h2 className="text-3xl font-bold text-center mb-10">Pricing</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="border rounded-lg p-6 text-center shadow hover:shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Free</h3>
-            <p className="text-4xl font-bold mb-4">$0</p>
-            <p>Basic task management for individuals.</p>
-          </div>
-          <div className="border-2 border-blue-600 rounded-lg p-6 text-center shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Pro</h3>
-            <p className="text-4xl font-bold mb-4">
-              $9<span className="text-lg">/mo</span>
-            </p>
-            <p>Advanced features and integrations for power users.</p>
-          </div>
-          <div className="border rounded-lg p-6 text-center shadow hover:shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Team</h3>
-            <p className="text-4xl font-bold mb-4">
-              $29<span className="text-lg">/mo</span>
-            </p>
-            <p>Collaboration tools and admin controls for teams.</p>
-          </div>
-        </div>
-      </motion.section>
+      {/* Pricing Section */}
+      <section className="w-full py-20 bg-white px-6">
+        <motion.div
+          className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2 }}
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+        >
+          {pricing.map((plan) => (
+            <div
+              key={plan.name}
+              className="p-6 border rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <h3 className="text-2xl font-semibold text-indigo-600">
+                {plan.name}
+              </h3>
+              <p className="mt-2 text-3xl font-bold">{plan.price}</p>
+              <ul className="mt-4 text-gray-600 space-y-2">
+                {plan.features.map((f) => (
+                  <li key={f}>✔ {f}</li>
+                ))}
+              </ul>
+              <Button className="mt-6 w-full bg-indigo-600 hover:bg-indigo-700 text-white">
+                Choose {plan.name}
+              </Button>
+            </div>
+          ))}
+        </motion.div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-gray-300 py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <footer className="w-full py-10 bg-gray-900 text-white px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <p>
             &copy; {new Date().getFullYear()} TaskFlow. All rights reserved.
           </p>
-          <div className="flex space-x-4 text-xl">
-            <a href="#" className="hover:text-white">
+          <div className="flex gap-4 text-xl">
+            <a href="#">
               <FaTwitter />
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="#">
               <FaFacebook />
             </a>
-            <a href="#" className="hover:text-white">
+            <a href="#">
               <FaLinkedin />
             </a>
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
-};
-
-export default TaskApp;
+}

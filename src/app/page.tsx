@@ -51,7 +51,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="flex-1 bg-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-4xl font-extrabold text-pink-700">
+          <h2 className="text-4xl font-extrabold text-yellow-700">
             Elevvo Internship Portfolio
           </h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -63,7 +63,7 @@ export default function HomePage() {
 
       {/* Tasks Section */}
       <section id="tasks" className="max-w-6xl mx-auto px-6 py-12">
-        <h3 className="text-2xl font-semibold text-pink-600 mb-6">
+        <h3 className="text-2xl font-semibold text-yellow-600 mb-6">
           Completed Tasks
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -73,7 +73,7 @@ export default function HomePage() {
               href={task.url}
               className="block p-6 bg-white rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition"
             >
-              <h4 className="text-lg font-bold text-pink-400">{task.title}</h4>
+              <h4 className="text-lg font-bold ">{task.title}</h4>
               <p className="mt-2 text-sm text-gray-500">
                 Click to view details
               </p>
@@ -85,7 +85,7 @@ export default function HomePage() {
       {/* About Section */}
       <section id="about" className="bg-gray-100 py-12">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h3 className="text-2xl font-semibold text-pink-600">About</h3>
+          <h3 className="text-2xl font-semibold text-yellow-600">About</h3>
           <p className="mt-4 text-gray-600">
             This site was built as part of the Elevvo internship program to
             demonstrate completed tasks and showcase hands-on learning in web

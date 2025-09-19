@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type Post = {
@@ -15,7 +16,7 @@ const postsData: Post[] = [
   {
     id: 1,
     title: "Building with React",
-    image: "https://via.placeholder.com/300x200",
+    image: "/react.jpg",
     description: "Learn how to build scalable apps with React.",
     date: "2025-09-10",
     category: "Tech",
@@ -23,7 +24,7 @@ const postsData: Post[] = [
   {
     id: 2,
     title: "Exploring Japan",
-    image: "https://via.placeholder.com/300x200",
+    image: "/japan.jpg",
     description: "A journey through Tokyo and Kyoto.",
     date: "2025-08-20",
     category: "Travel",
@@ -31,7 +32,7 @@ const postsData: Post[] = [
   {
     id: 3,
     title: "10 Best Pasta Recipes",
-    image: "https://via.placeholder.com/300x200",
+    image: "/pasta-recipe.webp",
     description: "Quick and delicious recipes for pasta lovers.",
     date: "2025-08-15",
     category: "Food",
@@ -39,7 +40,7 @@ const postsData: Post[] = [
   {
     id: 4,
     title: "Next.js Performance Tips",
-    image: "https://via.placeholder.com/300x200",
+    image: "/nextjs.png",
     description: "Make your Next.js apps blazing fast.",
     date: "2025-07-12",
     category: "Tech",
@@ -47,7 +48,7 @@ const postsData: Post[] = [
   {
     id: 5,
     title: "Backpacking Europe",
-    image: "https://via.placeholder.com/300x200",
+    image: "/backpacking-europe.jpeg",
     description: "Tips and tricks for affordable travel.",
     date: "2025-07-01",
     category: "Travel",
@@ -125,9 +126,11 @@ const PersonalBlogHomepage = () => {
             key={post.id}
             className="bg-white shadow rounded-lg overflow-hidden hover:shadow-lg transition"
           >
-            <img
+            <Image
               src={post.image}
               alt={post.title}
+              height={40}
+              width={500}
               className="w-full h-40 object-cover"
             />
             <div className="p-4">

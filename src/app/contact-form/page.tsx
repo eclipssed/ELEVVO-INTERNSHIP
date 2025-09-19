@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -43,7 +44,6 @@ const ContactForm = () => {
       setSuccess("");
       return;
     }
-
     console.log("Form submitted:", formData);
     setSuccess("Your message has been sent!");
     setFormData({ name: "", email: "", subject: "", message: "" });
