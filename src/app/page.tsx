@@ -3,46 +3,45 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 
+const tasks = [
+  {
+    id: 1,
+    title: "Task 1: Build a Collapsible Sidebar",
+    url: "/collapsible-sidebar",
+  },
+  { id: 2, title: "Task 2: Create a Contact Form", url: "/contact-form" },
+  {
+    id: 3,
+    title: "Task 3: Build a One-Page Website for a Task App",
+    url: "/task-app",
+  },
+  {
+    id: 4,
+    title: "Task 4: Create a Personal Blog Homepage",
+    url: "/personal-blog",
+  },
+  {
+    id: 5,
+    title: "Task 5: Build a Responsive Landing Page for a Tech Product",
+    url: "/tech-product-landing-page",
+  },
+  {
+    id: 6,
+    title: "Task 6: Multi-Page Dashboard for a Fictional Freelance Client",
+    url: "/client-dashboard",
+  },
+  {
+    id: 7,
+    title: "Task 7: Build a Real-Time Weather Dashboard Using an API",
+    url: "/weather-dashboard",
+  },
+  {
+    id: 8,
+    title: "Task 8: Build a Job Application Tracker Web App",
+    url: "/job-application-tracker",
+  },
+];
 export default function HomePage() {
-  const tasks = [
-    {
-      id: 1,
-      title: "Task 1: Build a Collapsible Sidebar",
-      url: "/collapsible-sidebar",
-    },
-    { id: 2, title: "Task 2: Create a Contact Form", url: "/contact-form" },
-    {
-      id: 3,
-      title: "Task 3: Build a One-Page Website for a Task App",
-      url: "/task-app",
-    },
-    {
-      id: 4,
-      title: "Task 4: Create a Personal Blog Homepage",
-      url: "/personal-blog",
-    },
-    {
-      id: 5,
-      title: "Task 5: Build a Responsive Landing Page for a Tech Product",
-      url: "/tech-product-landing-page",
-    },
-    {
-      id: 6,
-      title: "Task 6: Multi-Page Dashboard for a Fictional Freelance Client",
-      url: "/client-dashboard",
-    },
-    {
-      id: 7,
-      title: "Task 7: Build a Real-Time Weather Dashboard Using an API",
-      url: "/weather-dashboard",
-    },
-    {
-      id: 8,
-      title: "Task 8: Build a Job Application Tracker Web App",
-      url: "/job-application-tracker",
-    },
-  ];
-
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800">
       {/* Navbar */}
