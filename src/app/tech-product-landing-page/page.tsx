@@ -205,11 +205,15 @@ export default function TechProductLandingPage() {
         </section>
 
         <section id="features" className="py-12">
-          <h2 className="text-2xl font-bold">Features</h2>
-          <p className="text-slate-500 dark:text-slate-300 mt-2 max-w-xl">
-            Everything you need to instrument, monitor and act — without the
-            usual circus.
-          </p>
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-600">
+              Features
+            </h2>
+            <p className="text-slate-500 dark:text-slate-300 mt-3 text-lg">
+              Everything you need to instrument, monitor and act — without the
+              usual circus.
+            </p>
+          </div>
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
@@ -219,7 +223,14 @@ export default function TechProductLandingPage() {
         </section>
 
         <section id="testimonials" className="py-12">
-          <h2 className="text-2xl font-bold">What customers say</h2>
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-600">
+              What Customers Say
+            </h2>
+            <p className="text-slate-500 dark:text-slate-300 mt-3 text-lg">
+              Teams and leaders trust SignalSuite to turn chaos into clarity.
+            </p>
+          </div>{" "}
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
               <TestimonialCard key={t.id} testimonial={t} />
@@ -228,11 +239,15 @@ export default function TechProductLandingPage() {
         </section>
 
         <section id="pricing" className="py-12">
-          <h2 className="text-2xl font-bold">Pricing</h2>
-          <p className="text-slate-500 mt-2">
-            Simple predictable pricing so you don&apos;t have to juggle
-            spreadsheets and regrets.
-          </p>
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-600">
+              Pricing
+            </h2>
+            <p className="text-slate-500 dark:text-slate-300 mt-3 text-lg">
+              Simple, predictable pricing so you don’t have to juggle
+              spreadsheets and regrets.
+            </p>
+          </div>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricingPlans.map((plan, i) => (
