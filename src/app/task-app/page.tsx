@@ -106,8 +106,8 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className=" bg-gradient-to-b from-indigo-50 to-white min-h-screen w-full  flex items-center justify-center">
-        <div className="w-full max-w-6xl min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
+      <section className="mt-16 py-16 bg-gradient-to-b from-indigo-50 to-white min-h-screen w-full  flex items-center justify-center">
+        <div className="w-full max-w-6xl min-h-screen flex gap-8 lg:gap-16 flex-col md:flex-row items-center justify-between px-6 md:px-12">
           {/* Left Side */}
           <motion.div
             className="flex-1 text-center md:text-left"
@@ -136,7 +136,7 @@ export default function Home() {
 
           {/* Right Side (Illustration) */}
           <motion.div
-            className="flex-1 mt-10 md:mt-0 flex items-center justify-center"
+            className="flex-1 w-full mt-10 md:mt-0 flex items-center justify-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.2 }}

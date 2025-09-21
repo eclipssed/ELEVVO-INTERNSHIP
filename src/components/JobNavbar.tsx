@@ -11,7 +11,7 @@ export default function JobNavbar() {
         >
           Job Tracker
         </Link>
-        <div className="flex gap-4">
+        <div className=" gap-4 hidden sm:flex">
           <Link
             href="/job-application-tracker/add"
             className="hover:text-indigo-200 transition"

@@ -47,7 +47,7 @@ function ProjectsPage() {
         </div>
       </div>
 
-      <div className="overflow-x-auto bg-white dark:bg-[#042831] border dark:border-[#083142] rounded-md">
+      <div className="hidden sm:block w-full overflow-x-auto bg-white dark:bg-[#042831] border dark:border-[#083142] rounded-md">
         <table className="min-w-full divide-y text-sm">
           <thead className="bg-slate-50 dark:bg-[#032729]">
             <tr>
@@ -65,14 +65,32 @@ function ProjectsPage() {
               >
                 <td className="px-4 py-3">{p.name}</td>
                 <td className="px-4 py-3">{p.client}</td>
-                <td className="px-4 py-3">{p.status}</td>
-                <td className="px-4 py-3">
+                <td className="px-4 py-3 whitespace-nowrap">{p.status}</td>
+                <td className="px-4 py-3 whitespace-nowrap">
                   {new Date(p.deadline).toLocaleDateString()}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+      {/* Card layout (only visible on mobile) */}
+      <div className="sm:hidden space-y-4">
+        {projects.map((p) => (
+          <div
+            key={p.id}
+            className="p-4 bg-white dark:bg-[#042831] border dark:border-[#083142] rounded-md shadow-sm"
+          >
+            <div className="font-semibold">{p.name}</div>
+            <div className="text-sm text-slate-500">{p.client}</div>
+            <div className="flex justify-between text-sm mt-2">
+              <span className="font-medium">{p.status}</span>
+              <span className="text-slate-500">
+                {new Date(p.deadline).toLocaleDateString()}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -66,6 +66,7 @@ export default function ClientDashboardLayout({
               const isActive = pathname === href;
               return (
                 <Link
+                  onClick={(prev) => setSidebarOpen(!prev)}
                   key={href}
                   href={href}
                   className={`w-full flex items-center gap-3 px-3 py-2 rounded-md ${

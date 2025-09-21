@@ -1,4 +1,5 @@
 "use client";
+import { LocationEdit, Search } from "lucide-react";
 import React, { useState } from "react";
 
 export default function SearchBar({
@@ -13,7 +14,7 @@ export default function SearchBar({
   const [q, setQ] = useState("");
   return (
     <div className="flex gap-3">
-      <div className="flex-1">
+      <div className="flex-1 w-full">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -34,14 +35,22 @@ export default function SearchBar({
         }}
         className="px-4 py-2 rounded-md bg-slate-800 text-white"
       >
-        Search
+        <Search className="block sm:hidden" />
+        <span className="hidden sm:block">Search</span>
       </button>
       <button
         onClick={onUseLocation}
         disabled={geoLoading}
         className="px-4 py-2 rounded-md border"
       >
-        {geoLoading ? "Locating…" : "Use my location"}
+        {geoLoading ? (
+          "Locating…"
+        ) : (
+          <>
+            <LocationEdit className="block sm:hidden" />
+            <span className="hidden sm:block">Use my location</span>
+          </>
+        )}
       </button>
     </div>
   );

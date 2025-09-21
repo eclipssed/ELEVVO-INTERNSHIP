@@ -148,8 +148,8 @@ export default function WeatherDashboardPage() {
     <main className="min-h-screen bg-gray-50 dark:bg-[#071423] text-slate-800 dark:text-slate-100 p-6">
       <div className="max-w-5xl mx-auto">
         <header className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-semibold">Weather — Clean Dashboard</h1>
-          <div className="text-sm text-slate-500">
+          <h1 className="text-2xl font-semibold">WeatherHub</h1>
+          <div className="text-sm text-slate-500 hidden sm:block">
             Minimal • Fast • Uses your location (with permission)
           </div>
         </header>
