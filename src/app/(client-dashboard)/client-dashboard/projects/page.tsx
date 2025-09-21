@@ -1,4 +1,4 @@
-type Project = {
+export type Project = {
   id: string;
   name: string;
   status: "Active" | "Paused" | "Completed" | "Stalled";
@@ -17,7 +17,7 @@ const projects: Project[] = [
   {
     id: "p2",
     name: "Mobile App UI",
-    status: "Interviewing" as any,
+    status: "Stalled",
     deadline: "2025-11-01",
     client: "BlueWave",
   },

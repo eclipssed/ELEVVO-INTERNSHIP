@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, JSX, ReactNode } from "react";
+import React, { useState, ReactNode } from "react";
 
 import { FiBell, FiUser, FiHome, FiList, FiDollarSign } from "react-icons/fi";
 import Link from "next/link";

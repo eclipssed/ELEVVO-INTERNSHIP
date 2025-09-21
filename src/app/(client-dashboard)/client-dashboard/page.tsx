@@ -144,7 +144,7 @@ function OverviewPage() {
             <span className="text-xs text-slate-400">2h ago</span>
           </li>
           <li className="flex justify-between">
-            <span>Mobile App UI moved to 'In Progress'</span>
+            <span>Mobile App UI moved to &apos;In Progress&apos;</span>
             <span className="text-xs text-slate-400">6h ago</span>
           </li>
           <li className="flex justify-between">

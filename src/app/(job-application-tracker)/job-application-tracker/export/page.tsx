@@ -1,5 +1,5 @@
 "use client";
-import { useJobs, Job } from "@/context/JobsContext";
+import { Job, useJobs } from "@/context/JobsContext";
 import React, { useRef } from "react";
 
 export default function ExportImport() {
@@ -45,8 +45,11 @@ export default function ExportImport() {
 
         setAll(normalized);
         alert("Imported successfully");
-      } catch (err: any) {
-        alert("Import failed: " + err.message);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          alert("Import failed: " + err.message);
+        }
+        alert("Unknown Error");
       }
     };
     reader.readAsText(file);

@@ -69,7 +69,10 @@ export async function getWeather({
         weathercode: data.daily.weathercode,
       },
     };
-  } catch (err: any) {
-    return { error: err.message || "Unknown error" };
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return { error: err.message };
+    }
+    return { err: "Unknown Error" };
   }
 }

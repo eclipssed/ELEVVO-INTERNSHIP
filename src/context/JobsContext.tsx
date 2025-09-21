@@ -22,6 +22,15 @@ export interface Job {
   notes?: string;
 }
 
+export interface JobsContextValue {
+  jobs: Job[];
+  addJob: (job: Omit<Job, "id">) => void;
+  updateJob: (id: string, patch: Partial<Job>) => void;
+  deleteJob: (id: string) => void;
+  setAll: (list: Job[]) => void;
+  clearAll: () => void;
+}
+
 function loadFromStorage(): Job[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -35,15 +44,6 @@ function loadFromStorage(): Job[] {
 
 function saveToStorage(list: Job[]): void {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-}
-
-interface JobsContextValue {
-  jobs: Job[];
-  addJob: (job: Omit<Job, "id">) => void;
-  updateJob: (id: string, patch: Partial<Job>) => void;
-  deleteJob: (id: string) => void;
-  setAll: (list: Job[]) => void;
-  clearAll: () => void;
 }
 
 const JobsContext = createContext<JobsContextValue | null>(null);

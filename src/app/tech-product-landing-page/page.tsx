@@ -3,13 +3,7 @@
 import React, { JSX, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  CheckCircle,
-  Users,
-  Zap,
-  ShieldCheck,
-  Star,
-} from "lucide-react";
+import { CheckCircle, Users, Zap, ShieldCheck, Star } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -32,7 +26,76 @@ type PricingCardType = {
   highlighted?: boolean;
 };
 
-export default function TechProductLandingPage(): JSX.Element {
+const features: Feature[] = [
+  {
+    id: 1,
+    title: "Instant Insights",
+    desc: "Analyze user data in seconds — not the geological timescale.",
+    icon: <Zap size={20} />,
+  },
+  {
+    id: 2,
+    title: "Secure by Design",
+    desc: "Enterprise-grade security without the finger-wagging compliance talk.",
+    icon: <ShieldCheck size={20} />,
+  },
+  {
+    id: 3,
+    title: "Collaboration",
+    desc: "Real-time teamwork with fewer meetings and more actual work.",
+    icon: <Users size={20} />,
+  },
+];
+
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Aisha Khan",
+    role: "Head of Growth",
+    quote:
+      "Cut our onboarding time in half — the onboarding was the worst part, now it's tolerable.",
+  },
+  {
+    id: 2,
+    name: "Daniel",
+    role: "CTO",
+    quote:
+      "Resilient, simple API and docs that don't require an academic degree.",
+  },
+  {
+    id: 3,
+    name: "Lina M.",
+    role: "Product Manager",
+    quote: "Design is delightful. Our churn went down and morale went up.",
+  },
+];
+
+const pricingPlans: PricingCardType[] = [
+  {
+    name: "Hobby",
+    desc: "Perfect for early experiments and side projects.",
+    price: "$0/month",
+    features: ["Basic dashboards", "1 seat"],
+    cta: "Get started",
+  },
+  {
+    name: "Startup",
+    desc: "For teams that want reliable signals and fewer fires.",
+    price: "$49/month",
+    features: ["Everything in Hobby", "Up to 10 seats", "Email support"],
+    cta: "Start trial",
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    desc: "Custom plans, SSO, and a human assigned to actually answer the phone.",
+    price: "Custom",
+    features: ["Unlimited seats", "SLA & SSO", "Dedicated support"],
+    cta: "Contact sales",
+  },
+];
+
+export default function TechProductLandingPage() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
@@ -51,75 +114,6 @@ export default function TechProductLandingPage(): JSX.Element {
     else document.documentElement.classList.remove("dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
-
-  const features: Feature[] = [
-    {
-      id: 1,
-      title: "Instant Insights",
-      desc: "Analyze user data in seconds — not the geological timescale.",
-      icon: <Zap size={20} />,
-    },
-    {
-      id: 2,
-      title: "Secure by Design",
-      desc: "Enterprise-grade security without the finger-wagging compliance talk.",
-      icon: <ShieldCheck size={20} />,
-    },
-    {
-      id: 3,
-      title: "Collaboration",
-      desc: "Real-time teamwork with fewer meetings and more actual work.",
-      icon: <Users size={20} />,
-    },
-  ];
-
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: "Aisha Khan",
-      role: "Head of Growth",
-      quote:
-        "Cut our onboarding time in half — the onboarding was the worst part, now it's tolerable.",
-    },
-    {
-      id: 2,
-      name: "Daniel",
-      role: "CTO",
-      quote:
-        "Resilient, simple API and docs that don't require an academic degree.",
-    },
-    {
-      id: 3,
-      name: "Lina M.",
-      role: "Product Manager",
-      quote: "Design is delightful. Our churn went down and morale went up.",
-    },
-  ];
-
-  const pricingPlans: PricingCardType[] = [
-    {
-      name: "Hobby",
-      desc: "Perfect for early experiments and side projects.",
-      price: "$0/month",
-      features: ["Basic dashboards", "1 seat"],
-      cta: "Get started",
-    },
-    {
-      name: "Startup",
-      desc: "For teams that want reliable signals and fewer fires.",
-      price: "$49/month",
-      features: ["Everything in Hobby", "Up to 10 seats", "Email support"],
-      cta: "Start trial",
-      highlighted: true,
-    },
-    {
-      name: "Enterprise",
-      desc: "Custom plans, SSO, and a human assigned to actually answer the phone.",
-      price: "Custom",
-      features: ["Unlimited seats", "SLA & SSO", "Dedicated support"],
-      cta: "Contact sales",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#071024] text-slate-900 dark:text-slate-100 transition-colors duration-200">
@@ -236,8 +230,8 @@ export default function TechProductLandingPage(): JSX.Element {
         <section id="pricing" className="py-12">
           <h2 className="text-2xl font-bold">Pricing</h2>
           <p className="text-slate-500 mt-2">
-            Simple predictable pricing so you don't have to juggle spreadsheets
-            and regrets.
+            Simple predictable pricing so you don&apos;t have to juggle
+            spreadsheets and regrets.
           </p>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">

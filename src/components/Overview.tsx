@@ -52,7 +52,7 @@ export default function OverviewPage() {
       <div className="bg-white rounded shadow p-4">
         <h2 className="font-semibold mb-2">Recent Activity</h2>
         <ul className="text-sm space-y-2">
-          <li>✔ Completed "Portfolio Website"</li>
+          <li>✔ Completed &quot;Portfolio Website&quot;</li>
           <li>💰 Received $300 from Client X</li>
           <li>📌 New project: Mobile App UI</li>
         </ul>

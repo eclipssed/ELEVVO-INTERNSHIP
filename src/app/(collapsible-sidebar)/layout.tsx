@@ -8,14 +8,13 @@ import {
   Menu,
   MenuIcon,
   Settings,
-  User,
   User2Icon,
   X,
 } from "lucide-react";
 import { FaTasks } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 
-type NavItem = {
+export type NavItem = {
   id: string;
   label: string;
   href: string;
@@ -48,13 +47,11 @@ const STORAGE_KEY = "sidebar:open:v1";
 
 export default function SidebarLayout({
   children,
-  defaultOpen,
 }: {
   children: React.ReactNode;
-  defaultOpen?: boolean;
 }) {
   // start closed on small screens by default unless user passed defaultOpen
-  const [open, setOpen] = useState<boolean>(defaultOpen ?? false);
+  const [open, setOpen] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -62,13 +59,13 @@ export default function SidebarLayout({
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw !== null) setOpen(raw === "1");
-      else if (typeof defaultOpen !== "undefined") setOpen(defaultOpen);
+      // else if (typeof defaultOpen !== "undefined") setOpen(defaultOpen);
       else setOpen(window.innerWidth >= 1024); // open on desktop by default
     } catch (e) {
       console.log("localstorage get error: ", e);
       // ignore localStorage failures
     }
-  }, [defaultOpen]);
+  }, []);
 
   useEffect(() => {
     if (!mounted) return;

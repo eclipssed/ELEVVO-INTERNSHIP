@@ -1,5 +1,5 @@
 "use client";
-import { useJobs, Job } from "@/context/JobsContext";
+import { Job, useJobs } from "@/context/JobsContext";
 import dayjs from "dayjs";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
